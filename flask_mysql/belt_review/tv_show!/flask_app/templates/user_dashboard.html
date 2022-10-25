@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome, {{all_users.first_name}}</h2>
+    
+
+    <a href='/add/show'>+Add Show</a> | <a href="/logout">Logout</a><br><br>
+    <div class="div">
+        <h5>All tv Shows</h5>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>| Network</th>
+                <th>| Release Date</th>
+                <th>| description</th>
+                <th>| Action</th>
+            </tr>
+            {%for show in all_shows%}
+            <tr>
+                <td>{{show.title}}</td>
+                <td>{{show.network}}</td>
+                <td>{{show.release_date}}</td>
+                <td>{{show.description}}</td>
+                <td>
+                    <a href="">Show</a>
+                    <!-- condtional rendering -->
+                    {% if session['uuid']== show.user_id%}
+                    <a href="">|  Edit</a>
+                    <a href="">|  Delete</a>
+                    {% endif%}
+                    <!-- end -->
+                </td>
+                {%endfor%}
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+whos going to read ur resume?
+1-ATS reader = applicant tracking system
+2-Recruiter
+3-Hiring Mannager/engineer
+
+how long will a recruiter look review your resume on first pass?
+ high average of 8 secs.
+
+Technicall resume key points/formatting!
+key points-
+    -demonstrate impact, problem solving skills, action statements
+    (not loundry list of task)
+    - consistency, detail focus is critical
+    - satisfies 3 levels of review, incorrporates industry knowledge (rule 7)
+        though research
+
+High Formatting 
+    -1 page
+    -10-12 point font, 0.5 margin-google doc
+    -avoid templates and excessive use of columns/ tables (makes ATS mad)
+    -consistency is SOOOO- important(font,text size, spcaing, grammar, punctuation, etc)
+    -avoid narrative format or possesive pornouns- use as few words as possible()
+    -Master vs. targeted resume(avoid redundancy)
+    -send resume as a PDF 
+        why?
+            -messes the format of resume. avoid seding files besides PDF.
+            -ps- A friend of a friend can combat ATS and get you the job.
+            -less white space is better
+ 
+***check this site out
+        jobscan.co ******
+outline to break down your projects
+    ex: Built registration and login complete with password protection using bcrypt, personal information fields with validations, and [add one more]
+
+technical verb sites
+    1-https://insights.dice.com/power-verbs-for-technical-work/
+    2-https://career.engr.psu.edu/students/basics/action-verbs.aspx
+    3-https://www.indeed.com/career-advice/resumes-cover-letters/action-verbs-to-make-your-resume-stand-out
+
+cool idea
+    Color words with the color of the resume background, and insert all the power verbs possible

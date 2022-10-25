@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Show</title>
+</head>
+<body>
+    <div class="div">
+        <h2>Add Show</h2>
+        <div class="div">
+            <form action="/processing/add/show" method="POST">
+                <!-- title -->
+                <label for="title">Title</label><br>
+                <input type="text" name="title" id="title"><br>
+                <!-- network -->
+                <label for="network">Network</label><br>
+                <textarea name="network" id="network" cols="30" rows="5">
+                </textarea><br>
+                <!-- release_date -->
+                <label for="release_date">release Dates</label><br>
+                <input type="date" name="release_date" id="release_date"><br><br>
+                <!-- description -->
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea><br><br>
+                <button>Add Show</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

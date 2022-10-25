@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sighting Post</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+
+</head>
+<body>
+    <h1>Sasquatch Websighting</h1>
+    <div class="div">
+        <div>
+            <h3 class="rigth" class="container">{{logged_user.first_name}} {{logged_user.last_name}}</h3>
+            <button><a href="/sightings/new">Report Sighting</a></button><br>   
+            <button><a href='/logout'>Logout</a></button>
+        </div><br>
+        <div>
+            <!-- dashboard -->
+            <p>Reported Sightings</p>
+            {%for one_sighting in all_sightings%}
+                <p>
+                    {{one_sighting.location}}
+                    {{one_sighting.date_of_sighting}}
+                </p>
+                Reported By: {{one_sighting.witness.first_name}} {{one_sighting.witness.last_name}} 
+                <p>
+                    <a href="/sightings/{{one_sighting.id}}">View</a>
+                    {%if session['uuid']== one_sighting.witness.id%}
+                    <a href="/sightings/{{one_sighting.id}}/edit">Edit</a>
+                    <a href="/sightings/{{one_sighting.id}}/delete">Delete</a>
+                    {%endif%}
+                </p>
+            {%endfor%}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

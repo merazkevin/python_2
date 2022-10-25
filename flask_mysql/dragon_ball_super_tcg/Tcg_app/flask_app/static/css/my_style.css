@@ -1,0 +1,40 @@
+
+        *{
+            padding: 0px;
+            box-sizing: border-box;
+            text-align: center;
+            
+        }
+        h2{
+            color: rgb(4, 87, 241);
+            text-align: center;
+        }
+        body{
+            display: flex;
+        }
+
+        .div{
+            justify-content: space-between;
+            margin: 10px;
+            border-radius: 8px;
+            padding: 20px;
+            border: black 5px;
+            background-color: grey;
+            color: peachpuff;
+        }
+        .buttons{
+            padding: 3px;
+            color: black;
+            background-color: aquamarine;
+            border-radius: 5px;
+            font-size: medium;
+            box-shadow:rgb(25, 25, 21) 0px 3px 3px;
+        }
+        .a{
+            color: rgb(4, 87, 241);
+        }
+
+        .container{
+            height: 600px;
+            width: 800px;
+        }

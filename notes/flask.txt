@@ -1,0 +1,48 @@
+What is Flask?
+    last is a micro-framework for building Web application.
+why i should use flask?
+    easyto set up
+    easy to use libraries for all our server needs
+what does flask do?
+    it listens to HTTP Request?responses
+    it can handle routing in our server.
+    serves up HTML,CSS, Javascript
+    passes data from server to templates
+    packages data from forms
+    serves JSON
+    Handles SESSION Cookies.
+Flask is broken into two main parts 
+TEmplates(HTML)+Statics(css,js) and server.py
+
+flask data flow Diagram
+
+                                ______________________________________________
+                               |                                              |
+[----------]                   |    |-------------------------->[----------]  |
+[  client  ]-----------------> |  Flask         [-----------]   [--server--]  |
+[-- Data --]                   |   Data         [ Templates-]   [-- .py----]  |
+[----------]                   |                [ +Static   ]   [          ]  |
+      |__________<--_______________<--____________|  ^                 |      |
+                               [                     |_________________|      | 
+                               [______________________________________________|
+
+flask Flow:
+    The HTTP request is made and hits the server.py file.
+    Based on the route we give, it gathers up any HTML, CSS, JS, and data.
+    Then it responds back to the browser with what we return.
+    Eventually we will be breaking down the functionality of 
+    the Flask server into separate parts, but for now this is our simple server.
+
+Rendering Data on a Template
+    Now how do we use that data on the HTML? There are 2 special inputs we can use 
+    to insert Python-like code into our Flask templates.
+
+What is Jinja?
+    Jinja is a fast, expressive, extensible templating engine. Special placeholders 
+    in the template allow writing code similar to Python syntax. Then the template is passed data to render the final document.
+    jinja is an intermeadeater language use to display Html. 
+
+Jinja syntax
+    {{ some variable }}
+    {% some expression %}
+

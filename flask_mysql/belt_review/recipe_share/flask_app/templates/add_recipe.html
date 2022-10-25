@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+</head>
+<body>
+    <div class="div">
+        <h2>Add Recipe</h2>
+        <div class="div">
+            <form action="/processing/add/recipe" method="POST">
+                <!-- name -->
+                <label for="name">Name</label><br>
+                <input type="text" name="name" id="name"><br>
+                <!-- description -->
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="30" rows="5">
+                </textarea><br>
+                <!-- instruction -->
+                <label for="instruction">Instructions</label><br>
+                <textarea name="instruction" cols="30" rows="5" id="instruction">
+                </textarea><br><br>
+                <!-- under_30 -->
+                <label for="under_30"> Under 30 Mins?</label><br>
+                <input type="checkbox" id="under_30" name="under_30" value="yes">
+                <label for="yes">Yes</label>
+                <input type="checkbox" id="under_30" name="under_30" value="no">
+                <label for="yes">No</label><br><br>
+                <button>Add Recipe</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

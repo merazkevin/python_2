@@ -1,0 +1,26 @@
+/* div{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+} */
+.header{
+    align-content: center;
+    color: peachpuff;
+}
+.box{
+    margin: 5px;
+    background-color: aquamarine ;
+    border-radius: 5px;
+    
+}
+.jinja{
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    
+}
+table{
+    border-collapse: collapse;
+}

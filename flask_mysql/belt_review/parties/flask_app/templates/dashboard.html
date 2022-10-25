@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Post</title>
+</head>
+<body>
+    <div class="div">
+        <div class="div">
+            <button><a href='/logout'>Logout</a></button>
+            <button><a href='/my_parties'>My Parties</a></button>
+        </div><br>
+        <!-- dashboard -->
+        <h1>Welcome {{logged_user.first_name}}</h1>
+        <p>All The Cool Parties We Know About</h4>
+        <table>
+            <tr>
+                <th>What</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>All Ages</th>
+                <th>Posted By</th>
+                <th>Actions</th>
+            </tr>
+            {%for one_party in all_parties%}
+            <tr>
+                <td> {{one_party.what}} </td>
+                <td> {{one_party.location}} </td>
+                <td> {{one_party.date}} </td>
+                <td> {%if one_party.all_ages==1%}True{%else%}False{%endif%} </td>
+                <td> {{one_party.planner.first_name}} {{one_party.planner.last_name}}</td>
+                <td>
+                    <a href="/parties/{{one_party.id}}">View</a>
+                    {%if session['uuid']== one_party.planner.id%}
+                    <a href="/parties/{{one_party.id}}/edit">Edit</a>
+                    <a href="/parties/{{one_party.id}}/delete">Cancel</a>
+                    {%endif%}
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <button><a href="/parties/new">New Party</a></button>
+    </div>
+    
+    
+</body>
+</html>

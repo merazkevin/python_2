@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play ground</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 5px;
+            flex-wrap: wrap;
+        }
+        .header{
+            align-content: center;
+            color: peachpuff;
+        }
+        .div{
+            margin: 5px;
+            background-color: aquamarine ;
+            width: 100px;
+            height:100px;
+            
+        }
+        .jinja{
+            margin: 5px;
+            background-color:{{color}};
+            width: 100px;
+            height:100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2 class="header">Playground</h2>
+    <div>
+    {%for i in range(0, number)%}
+        <div class="jinja"></div>
+    {% endfor%}
+    </div>
+</body>
+</html>

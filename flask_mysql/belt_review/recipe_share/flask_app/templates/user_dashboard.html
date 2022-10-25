@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome, {{all_users.first_name}}</h2>
+    <a href='/add/recipe'>+create</a> | <a href="/logout">Logout</a><br><br>
+    <div class="div">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>| Under 30 mins?</th>
+                <th>| Posted By</th>
+                <th>| Actions</th>
+            </tr>
+            {%for recipe in all_recipies%}
+            <tr>
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.under_30}}</td>
+                <td></td>
+                {%endfor%}
+                <td>
+                    <a href="">Delete</a>
+                    <a href="">{{users_with_recipe.name}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

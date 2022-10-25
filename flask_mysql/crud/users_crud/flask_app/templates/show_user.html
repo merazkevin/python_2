@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show user</title>
+</head>
+<body>
+    <h2>User:   {{one_user.id}}</h2>
+    <form action="/">
+        <button>All Users</button>
+    </form>
+    <div class="div">
+        <table>
+            <p> <b> Full Name : </b>  {{one_user.first_name}}, {{one_user.last_name}}</p>
+            <p><b>Email  :</b>  {{one_user.email}}</p>
+            <p><b>Created At  :</b>  {{one_user.created_at}}</p>
+            <p><b>Updated At  :</b>  {{one_user.updated_at}}</p>
+        </table>
+    </div>
+    
+    <form action="/delete/{{one_user.id}}">
+        <button>Delete</button>
+    </form>
+    <form action="/update/form/{{one_user.id}}">
+        <button> Update </button>
+    </form>
+</body>
+</html>

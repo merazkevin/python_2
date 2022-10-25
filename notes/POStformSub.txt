@@ -1,0 +1,14 @@
+whats POST Form Submission?
+    its a post request. it is a secure Request made to the server.
+    It hides the data being sent to a server an a body.
+
+Specifying Allowed Methods: methods=['POST']
+If we don't provide a value for methods, only GET requests are allowed. 
+
+Accessing Data: 
+    request.form['name_of_input']
+        On the server-side, we can access data that was input into a field from a user through the request.form dictionary by providing the name of the input as the key.
+    Redirecting:
+     flask can redirect to another route im the  server by using redirect.
+what is session?
+    session is the way we establish a relationship with the client by saving, or writing, certain valuable pieces of data for use in future cycles, and by reading that data we've stored in previous cycles. This opens up a new world of user experience. With session, the user can have a conversation of sorts with a website, where a user makes decisions that can be tracked so the server can create a more cohesive user experience.

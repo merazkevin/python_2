@@ -1,0 +1,27 @@
+defined with curly brackets {}
+    key:value pairs
+    not index by numbers
+    access values with key
+    can contain nested sequences
+            lists/dictionaries/tuples
+
+A dictionary is an unordered collection of objects.
+Values are accessed using a key (typically a string).
+A dictionary can shrink or grow as needed.
+The contents of dictionaries can be modified.
+Dictionaries can be nested.
+Sequence operations such as slice cannot be used with dictionaries
+
+Dictionary Syntax:
+my_dict["some_string"] = some_value
+
+Python includes the following standalone functions for dictionaries:
+
+len() - give the total length of the dictionary.
+str() - produces a string representation of a dictionary.
+type() - returns the type of the passed variable. If passed variable is a dictionary, it will then return a dict type.
+Here are some very useful Python dictionary methods:
+
+.clear() - removes all elements from the dictionary
+.get(key, default=None) - A safe way to get a value, if the key might not exist. Returns the value for the specified key or None (or a value you specify) if the key is not in the dictionary.
+.update(pairs_to_update) - Add and update multiple key-value pairs at once, by passing in another dictionary of the pairs to update and add.

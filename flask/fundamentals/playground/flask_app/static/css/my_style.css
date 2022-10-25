@@ -1,0 +1,18 @@
+div{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+.header{
+    align-content: center;
+    color: peachpuff;
+}
+.div{
+    margin: 5px;
+    background-color: aquamarine;
+    width: 100px;
+    height:100px;
+    
+}

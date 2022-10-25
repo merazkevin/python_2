@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <h2>{{this_party.what}}</h2>
+        <div class="div">
+            <ul>
+                <li>
+                    <h4>Posted By:</h4>
+                    <p>
+                        {{this_party.planner.first_name}}
+                        {{this_party.planner.last_name}}
+                    </p>
+                </li>
+                <li>
+                    <h4>Location:</h4>
+                    <p>
+                        {{this_party.location}}
+                    </p>
+                </li>
+                <li>
+                    <h4>When:</h4>
+                    <p>
+                        {{this_party.when}}
+                    </p>
+                </li>
+                <li>
+                    <h4>All Ages Welcome:</h4>
+                    <p>
+                        {%if this_party.all_ages==1%}True{%else%}False{%endif%} 
+                    </p>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h4>Description: </h4>
+                    <p>
+                        {{this_party.description}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+selects all 
+    SELECT * 
+    FROM ;
+
+selects wen a condition has been met
+    SELECT 
+    FROM 
+    WHERE; 
+
+Inserting
+    INSERT INTO table_name (column_name1, column_name2) 
+    VALUES('column1_value', 'column2_value');
+
+Updating Records
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+
+DELETE Basics
+    SET SQL_SAFE_UPDATES = 0;
+
+Deleting Records
+    DELETE FROM table_name WHERE condition;
+
+Joining Tables
+
+    One to One:
+        SELECT * FROM customers 
+        JOIN addresses ON addresses.id = customers.address_id;
+    One to Many:
+        SELECT * FROM orders 
+        JOIN customers ON customers.id = orders.customer_id;
+    Many to Many:
+    SELECT * FROM orders 
+    JOIN items_orders ON orders.id = items_orders.order_id 
+    JOIN items ON items.id = items_orders.item_id;
+
+    many to many  left join
+    "SELECT * FROM toppings 
+
+LEFT JOIN add_ons ON add_ons.topping_id = toppings.id 
+
+LEFT JOIN burgers ON add_ons.burger_id = burgers.id 
+
+WHERE toppings.id = %(id)s;"

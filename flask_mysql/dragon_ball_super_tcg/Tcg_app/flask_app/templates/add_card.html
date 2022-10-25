@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misiing Card list</title>
+</head>
+<body>
+    <div class="div">
+        <table>
+            <h2>Add Card To List</h2>
+            <form action="/add/card/processing" method="POST">
+                <!-- card_set -->
+                <label for="card_set">card_set:</label><br>
+                <select name="card_set" id="card_set">
+                    <option value="Booster_pack_UNION_FORCE_[DBS-B02]">Booster pack-UNION_FORCE-[DBS-B02]</option>
+                    <option value="Booster_pack_GALACTIC_BATTLE_[DBS-B01]">Booster pack-GALACTIC BATTLE-[DBS-B01]</option>
+                </select><br>
+                <!-- name -->
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name"> <br>
+                <!-- name --> 
+                <label for="color">color:</label><br>
+                <input type="text" name="color" id="color"> <br>
+                <!-- rarity -->
+                <label for="rarity">rarity:</label><br>
+                <select name="rarity" id="rarity">
+                    <option value="C">C</option>
+                    <option value="UC">UC</option>
+                    <option value="R">R</option>
+                    <option value="SR">SR</option>
+                    <option value="SPR">SPR</option>
+                </select><br>
+                
+                <button>Add Card</button>
+
+            </form>
+        </table>
+    </div>
+</body>
+</html>

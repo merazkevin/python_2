@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../validation"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "belt_review"
+	}
+}

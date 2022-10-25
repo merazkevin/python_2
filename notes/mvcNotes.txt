@@ -1,0 +1,67 @@
+what does mvc stand for??
+    is a pattern in software design commonly used to implement user
+    interfaces, data, and controlling logic. It emphasizes a separation between the software's business logic and display.
+    
+MVC stands for:
+    (M)
+    models= MySQL
+        are the intities(thing) that talks to the database
+        models have all the class instances and methods. 
+    (V)-
+    views=html,css,js 
+            templates, static files. 
+    (C)-
+        controller= all the routes
+            all the routing gets handled by a controller.session, 
+            getrting data coming from the forms 
+
+MVC is used to minimize the amount of code and maximizes the productivity, by making working in 
+teams easier, better, faster.Developers who design frameworks have to make decisions about organizing code. One of the most popular patterns for organizing code is one known as MVC: Model-View-Controller.  Here's a basic breakdown of responsibilities:
+
+    Model
+        1.May build database tables.
+        2.Handles logic that relies on data.
+        3.Interfaces with the database.
+    View
+        1.HTML page that gets served to the client.
+        2.May contain some logic to be handled by a template engine.
+    controller
+        1.Receives incoming requests(routes).
+        2.Minimal logic(less code).
+        3.Calls on models to aggregate/process data
+        4.Determines appropriate response
+
+Modularizing Application
+    Some web development frameworks combine everything into one large, potentially monstrous file. Imagine you're on a team with a dozen other developers—how easy will it be to collaborate in one giant file? Yikes! Using the MVC pattern allows us to outsource the different kinds of tasks to specific file locations. When we begin a Flask project, we will need to create files to play all of the necessary roles in a web application:
+
+        Routes (expected requests)
+        Functions associated with those routes (how our server responds)
+        Database interaction through our Models (storing, retrieving data from database )
+        Templates (what the user interacts with)
+    
+    Modularization Process
+    Step 1: The App Folder
+            Create a directory called flask_app
+            Create __init__.py file inside flask_app folder.
+            Insert this code:
+
+                # __init__.py
+                from flask import Flask
+                app = Flask(__name__)
+                app.secret_key = "shhhhhh"copy
+                Remove above lines from server.py
+                In server.py we add this line:
+                from flask_app import app
+                # ...server.py
+
+            copy
+            Move templates folder into flask_app
+            Move static folder into flask_app
+
+Step 2: Controllers
+Now that we have our flask_app module set up with templates and static folders inside, we now need to move all of the code from our server.py into it, and organize it with purpose.
+
+Key Take Aways
+    We are going to use our OOP skills to make classes that correspond to our database tables.
+    We use these classes to query and map the raw data coming from the database into objects.
+    Our controller file will only handle rendering and rerouting and calling on the Model class to deal with the database.

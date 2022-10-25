@@ -1,0 +1,63 @@
+
+python -m pipenv install  flask PyMySQL
+
+**For every project involving a database, we'll go through the following steps.****
+    1.  We'll of course need a database to connect to. Let's create one in the workbench called
+    2.  Next, create a new project called first_flask_mysql. In addition to the server.
+    3.  Now we are gonna use OOP, and create a class that is modeled after our table in a file called friend.py.
+    **Note: We will need to call on the connectToMySQL function every time we want to execute a query because our connection closes as soon as the query finishes executing.
+    4.  Now let's update our server.py file to import the class and call on the class method to query our database.
+
+what are prepared statements?
+    A prepared statement in MySQL represents a precompiled statement(already made statement). A statement is compiled and stored in a prepared statement and you can later execute this multiple times. Instead of values we pass place holders to this statement. If you want to execute several identical queries (that differ by values only).
+Whenever we run a query that includes variables, we should use a prepared statement rather than string interpolation due SQL injection, which means that we are vulnerable to any input that a user may provide in the form, such as more SQL code.
+Practically what this means is that we'll need a string variable for the query and then a dictionary for the values to be used in the string.
+When we call on the database connection to execute the query, we will pass both the query and the dictionary, like so:
+
+        query = "UPDATE friends SET frist_name=%()s WHERE id=%(id_num)s;"
+        data = {
+            "fn":# possibly a value from a from
+            "id_num": # possibly a value from the URL, 
+        }
+        mysql.query_db(query,data)
+
+connection to the db - mysql - the instance of the MySQLConnection class
+query string - "INSERT INTO ..." - the string that will eventually be executed on our MySQL server
+data dictionary - the values that will be interpolated into the query string
+data dictionary keys - fn, id_num - the keys of the data dictionary used in the query string with %-interpolation
+(i.e. %(key_name)s)
+
+example of SQLinjection:
+joe@gmail.com' OR '1'='1
+By using plain string interpolation, this would turn our query into:
+SELECT * FROM users WHERE email = 'joe@gmail.com' OR '1'='1'; 
+    Since '1' = '1' will always evaluate to true, this query will now fetch all the data from the users table. We may have just opened a huge portion of our database to a malicious user. Any user with SQL knowledge may easily figure out how to manipulate our SQL queries. They may gain access to sensitive data or force us to run a very dangerous query.
+Other Examples of SQL Injection
+
+Consider another scenario where the user put in the following as their email:
+    joe@gmail.com"; DROP TABLE users;
+        What would have happened if the way you prepared the SQL query was like this?
+        query = f"SELECT * FROM users WHERE email = '{request.form['email']}';"
+        result = mysql.query_db(query)
+    The query it would have run would have been
+        SELECT * FROM users WHERE email = "joe@gmail.com";  DROP users;
+        In other words, it would have dropped the entire users table!
+
+What if the user passed the following as their email input?
+    joe@gmail.com"; UPDATE users SET password = '____' WHERE id = '___'
+This would have changed someone's password. Similarly, you can see how one could set oneself to be an admin or retrieve sensitive information from other users table (e.g. credit card, address, etc). The possibilities are endless.
+
+Fortunately, by using prepared statements, we can be assured that the user input will not be interpreted as SQL code. Our users may type in all the dangerous characters they'd like - apostrophes, semicolons, parentheses - and it won't matter. With the prepared statement, everything will simply be treated as a regular string, so our query will be harmlessly nonsensical as it looks for an impossible email address:
+    SELECT * FROM users WHERE email = "joe@gmail.com' OR '1'='1"; 
+There are many ways to protect against SQL injection, including using a framework and trusted libraries. For example, the way we currently have PyMySQL set up, we will not be able to run more than one query at a time. Users will therefore not be able to attach extra queries to ours. We may also try to sanitize strings from our post data manually by escaping special characters with the '/' character.
+Let's definitely stick with running queries by using the following pattern any time user input is concerned:
+    query = "SELECT * FROM users WHERE email = %(email)s;"
+    # the placeholder variable is called email
+    # it must match the key name in the data dictionary
+    data = { 
+        # this 'email' Key in data must be named to match the placeholder in the query.
+        'email' : request.form['email'] 
+    }
+    result = mysql.query_db(query, data)
+
+From Form to DB?
