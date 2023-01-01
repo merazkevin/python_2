@@ -7,7 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
 
+    <nav class="justify-content-start">
+        <img src="{{url_for('static', filename='images/sasquatchWebLogo2.png')}}" alt="sasquatchWebLogo"
+            class="navlogoImage">
+    </nav><br>
+
 </head>
+
 <body>
         <!-- jinja -->
         <div class="div">
@@ -16,13 +22,17 @@
             {%endfor%}
         </div>
         <!-- sighting_page -->
-        <div class="div">
-            <button><a href='/user/dashboard'>HOME</a></button>
-        </div>
-        <div class="div">
+        <div  class="justify-content-end" id="buttons">
+        <button class="button">
+            <a href='/user/dashboard'style="text-decoration: none; color: white;">HOME</a>
+        </button>
+        <button class="danger-button">
+            <a href='/logout' style="text-decoration: none; color: white;">Logout</a>
+        </button>
+    </div>
+    <div class="sightingFormContainer">
             <h2>Edit Sighting</h2>
             <!-- sighting form -->
-            <div class="div">
                 <form action="/sightings/{{this_sighting.id}}/update" method="POST">
                     <!-- location -->
                     <label for="location">Location:</label><br>
@@ -38,8 +48,6 @@
                     <input type="number" name="number_of_sasquatch" id="number_of_sasquatch" value="{{this_sighting.number_of_sasquatch}}"><br><br>
                     <button>Update sighting</button>
                 </form>
-    
-            </div>
         </div>
 </body>
 </html>
